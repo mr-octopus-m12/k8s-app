@@ -17,6 +17,6 @@ spec:
       containers:
         - name: k8s-producer
           image: greenpython/k8s-producer:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
