@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: k8s-producer-deployment
+  labels:
+    app: k8s-producer
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-producer
+  template:
+    metadata:
+      labels:
+        app: k8s-producer
+    spec:
+      containers:
+        - name: k8s-producer
+          image: greenpython/k8s-producer:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          startupProbe:
+            httpGet:
+              path: /probes/startup
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /probes/readiness
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /probes/liveness
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
