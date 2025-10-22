@@ -3,9 +3,11 @@ package com.example.k8s_producer.api
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RestController("/probes")
+@RestController
+@RequestMapping("/probes")
 class ProbesController {
 
     private val  logger: Logger = LoggerFactory.getLogger(ProbesController::class.java)
