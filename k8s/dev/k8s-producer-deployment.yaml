@@ -24,6 +24,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: k8s-producer-configmap
+            - secretRef:
+                name: k8s-producer-secret
           startupProbe:
             httpGet:
               path: /probes/startup

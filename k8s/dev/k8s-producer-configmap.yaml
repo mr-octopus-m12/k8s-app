@@ -1,9 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  namespace: dev
   name: k8s-producer-configmap
 data:
-  app-properties:
-    producer-variable: "PRODUCER_VARIABLE_VALUE_FROM_CM"
-  consumer-properties:
-    consumer-url: "k8s-consumer-service.dev.svc.cluster.local"
+  app-properties.producer-variable: "PRODUCER_VARIABLE_VALUE_FROM_CM"
+  consumer-properties.consumer-url: "k8s-consumer-service.dev.svc.cluster.local"

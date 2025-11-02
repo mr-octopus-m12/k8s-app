@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  namespace: dev
   name: k8s-consumer-configmap
 data:
-  consumer-variable: "CONSUMER_VARIABLE_VALUE_FROM_CM"
+  app-properties.consumer-variable: "CONSUMER_VARIABLE_VALUE_FROM_CM"
