@@ -4,6 +4,7 @@ metadata:
   namespace: dev
   name: k8s-consumer-service
 spec:
+  clusterIP: None
   type: ClusterIP
   selector:
     app: k8s-consumer
