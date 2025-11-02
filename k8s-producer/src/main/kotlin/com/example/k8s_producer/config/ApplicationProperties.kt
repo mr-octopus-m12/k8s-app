@@ -1,8 +1,8 @@
 package com.example.k8s_producer.config
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
+import org.springframework.boot.context.properties.ConfigurationProperties
 
-@ConditionalOnProperty(prefix = "app-properties")
+@ConfigurationProperties(prefix = "app-properties")
 data class ApplicationProperties(
     val producerVariable: String,
     val producerSecretVariable: String

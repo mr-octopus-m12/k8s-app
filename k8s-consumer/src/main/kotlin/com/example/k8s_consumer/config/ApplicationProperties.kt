@@ -1,9 +1,8 @@
 package com.example.k8s_consumer.config
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
-import org.springframework.context.annotation.Configuration
+import org.springframework.boot.context.properties.ConfigurationProperties
 
-@ConditionalOnProperty(prefix = "app-properties")
+@ConfigurationProperties(prefix = "app-properties")
 data class ApplicationProperties(
     val consumerVariable: String,
     val consumerSecretVariable: String

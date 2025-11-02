@@ -1,8 +1,8 @@
 package com.example.k8s_producer.config
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
+import org.springframework.boot.context.properties.ConfigurationProperties
 
-@ConditionalOnProperty(prefix = "consumer-properties")
+@ConfigurationProperties(prefix = "consumer-properties")
 class ConsumerProperties(
     val consumerUrl: String,
 ) {
