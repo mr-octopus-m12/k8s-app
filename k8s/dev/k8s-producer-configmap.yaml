@@ -5,4 +5,5 @@ metadata:
   name: k8s-producer-configmap
 data:
   app-properties.producer-variable: "PRODUCER_VARIABLE_VALUE_FROM_CM"
-  consumer-properties.consumer-url: "k8s-consumer-service.dev.svc.cluster.local"
+#  consumer-properties.consumer-url: "k8s-consumer-service.dev.svc.cluster.local"
+  consumer-properties.consumer-url: "k8s-consumer-service"
