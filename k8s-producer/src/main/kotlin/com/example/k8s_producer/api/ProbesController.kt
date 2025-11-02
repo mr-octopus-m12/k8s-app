@@ -1,29 +1,49 @@
 package com.example.k8s_producer.api
 
+import com.example.k8s_producer.config.ApplicationProperties
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
+@EnableConfigurationProperties(ApplicationProperties::class)
 @RestController
 @RequestMapping("/probes")
-class ProbesController {
+class ProbesController(
+    private val applicationProperties: ApplicationProperties
+) {
 
     private val  logger: Logger = LoggerFactory.getLogger(ProbesController::class.java)
 
     @GetMapping("/startup")
     fun startup() {
-        logger.info("Startup probe positive")
+        logger.info("""
+            Startup probe is positive
+            producer-variable: ${applicationProperties.producerVariable}
+            producer-secret-variable: ${applicationProperties.producerSecretVariable}
+            """.trimIndent()
+        )
     }
 
     @GetMapping("/readiness")
     fun readiness() {
-        logger.info("Readiness probe positive")
+        logger.info("""
+            Readiness probe is positive
+            producer-variable: ${applicationProperties.producerVariable}
+            producer-secret-variable: ${applicationProperties.producerSecretVariable}
+            """.trimIndent()
+        )
     }
 
     @GetMapping("/liveness")
     fun liveness() {
-        logger.info("Liveness probe positive")
+        logger.info("""
+            Liveness probe is positive
+            producer-variable: ${applicationProperties.producerVariable}
+            producer-secret-variable: ${applicationProperties.producerSecretVariable}
+            """.trimIndent()
+        )
     }
 }

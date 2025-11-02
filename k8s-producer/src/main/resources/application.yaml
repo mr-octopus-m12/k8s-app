@@ -1,3 +1,10 @@
 spring:
   application:
     name: k8s-producer
+
+app-properties:
+  producer-variable: PRODUCER_VARIABLE_VALUE_DEFAULT
+  producer-secret-variable: PRODUCER_SECRET_VARIABLE_VALUE_DEFAULT
+
+consumer-properties:
+  consumer-url: EMPTY_URL

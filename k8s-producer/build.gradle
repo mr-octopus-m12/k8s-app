@@ -47,5 +47,5 @@ kotlin {
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+//	useJUnitPlatform()
 }

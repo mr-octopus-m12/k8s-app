@@ -21,6 +21,9 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: k8s-consumer-configmap
           startupProbe:
             httpGet:
               path: /probes/startup

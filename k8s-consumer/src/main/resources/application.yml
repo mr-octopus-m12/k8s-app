@@ -1,3 +1,7 @@
 spring:
   application:
     name: k8s-consumer
+
+app-properties:
+  consumer-variable: CONSUMER_VARIABLE_VALUE_DEFAULT
+  consumer-secret-variable: CONSUMER_SECRET_VARIABLE_VALUE_DEFAULT
