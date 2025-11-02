@@ -5,6 +5,8 @@ spring:
 app-properties:
   producer-variable: PRODUCER_VARIABLE_VALUE_DEFAULT
   producer-secret-variable: PRODUCER_SECRET_VARIABLE_VALUE_DEFAULT
+  pod-name: EMPTY
+  namespace: EMPTY
 
 consumer-properties:
   consumer-url: EMPTY_URL

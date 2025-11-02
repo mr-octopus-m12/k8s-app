@@ -5,3 +5,5 @@ spring:
 app-properties:
   consumer-variable: CONSUMER_VARIABLE_VALUE_DEFAULT
   consumer-secret-variable: CONSUMER_SECRET_VARIABLE_VALUE_DEFAULT
+  pod-name: EMPTY
+  namespace: EMPTY

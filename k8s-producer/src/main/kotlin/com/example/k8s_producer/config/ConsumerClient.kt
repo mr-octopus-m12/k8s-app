@@ -13,7 +13,7 @@ class ConsumerClient(
 
     fun sendRequestToConsumer(data: Map<String, String>) {
         try {
-            consumerRestTemplate.postForLocation("/load", data)
+            consumerRestTemplate.postForLocation("/consumer/load", data)
             logger.info("Request with data: $data sent to consumer")
         } catch (e: Exception) {
             logger.error("Error occurred during request to consumer: {}", e.message)

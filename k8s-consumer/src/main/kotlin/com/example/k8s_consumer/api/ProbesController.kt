@@ -19,31 +19,16 @@ class ProbesController(
 
     @GetMapping("/startup")
     fun startup() {
-        logger.info("""
-            Startup probe is positive
-            consumer-variable: ${applicationProperties.consumerVariable}
-            consumer-secret-variable: ${applicationProperties.consumerSecretVariable}
-            """.trimIndent()
-        )
+        logger.info("Startup probe is positive for ${applicationProperties.podName} on ${applicationProperties.namespace} environment")
     }
 
     @GetMapping("/readiness")
     fun readiness() {
-        logger.info("""
-            Readiness probe is positive
-            consumer-variable: ${applicationProperties.consumerVariable}
-            consumer-secret-variable: ${applicationProperties.consumerSecretVariable}
-            """.trimIndent()
-        )
+        logger.info("Readiness probe is positive for ${applicationProperties.podName} on ${applicationProperties.namespace} environment")
     }
 
     @GetMapping("/liveness")
     fun liveness() {
-        logger.info("""
-            Liveness probe is positive
-            consumer-variable: ${applicationProperties.consumerVariable}
-            consumer-secret-variable: ${applicationProperties.consumerSecretVariable}
-            """.trimIndent()
-        )
+        logger.info("Liveness probe is positive for ${applicationProperties.podName} on ${applicationProperties.namespace} environment")
     }
 }

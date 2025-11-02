@@ -5,6 +5,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 @ConfigurationProperties(prefix = "app-properties")
 data class ApplicationProperties(
     val consumerVariable: String,
-    val consumerSecretVariable: String
+    val consumerSecretVariable: String,
+    val podName: String,
+    val namespace: String
 ) {
 }

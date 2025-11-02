@@ -19,31 +19,16 @@ class ProbesController(
 
     @GetMapping("/startup")
     fun startup() {
-        logger.info("""
-            Startup probe is positive
-            producer-variable: ${applicationProperties.producerVariable}
-            producer-secret-variable: ${applicationProperties.producerSecretVariable}
-            """.trimIndent()
-        )
+        logger.info("Startup probe is positive for ${applicationProperties.podName} on ${applicationProperties.namespace} environment")
     }
 
     @GetMapping("/readiness")
     fun readiness() {
-        logger.info("""
-            Readiness probe is positive
-            producer-variable: ${applicationProperties.producerVariable}
-            producer-secret-variable: ${applicationProperties.producerSecretVariable}
-            """.trimIndent()
-        )
+        logger.info("Readiness probe is positive for ${applicationProperties.podName} on ${applicationProperties.namespace} environment")
     }
 
     @GetMapping("/liveness")
     fun liveness() {
-        logger.info("""
-            Liveness probe is positive
-            producer-variable: ${applicationProperties.producerVariable}
-            producer-secret-variable: ${applicationProperties.producerSecretVariable}
-            """.trimIndent()
-        )
+        logger.info("Liveness probe is positive for ${applicationProperties.podName} on ${applicationProperties.namespace} environment")
     }
 }
