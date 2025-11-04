@@ -54,3 +54,10 @@ spec:
               port: 8080
             periodSeconds: 60
             failureThreshold: 3
+          resources:
+            requests:
+              cpu: "0.15"
+              memory: "150Mi"
+            limits:
+              cpu: "0.3"
+              memory: "300Mi"
