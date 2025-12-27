@@ -1,1 +1,2 @@
 docker build -t <LOGIN/NAME:VERSION> .
+docker push <LOGIN/NAME:VERSION> .

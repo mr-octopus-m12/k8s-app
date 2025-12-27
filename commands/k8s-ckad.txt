@@ -1,0 +1,6 @@
+kubectl api-resources   # get all resources
+kubectl explain pod.spec...  # describe fields from manifests
+kubectl exec -it <pod-name> -c <container-name> -- /bin/bash  # go into pod
+
+kubectl taint nodes m12-server app=m12:NoSchedule
+kubectl get nodes --show-labels
